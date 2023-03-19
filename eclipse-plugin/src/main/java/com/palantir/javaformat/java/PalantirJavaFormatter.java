@@ -16,10 +16,15 @@ package com.palantir.javaformat.java;
 
 import static com.google.common.collect.ImmutableList.toImmutableList;
 
+import com.google.common.base.CharMatcher;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Range;
+import com.google.common.collect.RangeSet;
+import com.google.common.collect.TreeRangeSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ServiceLoader;
-
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.formatter.CodeFormatter;
 import org.eclipse.jface.text.IRegion;
@@ -27,13 +32,6 @@ import org.eclipse.jface.text.Region;
 import org.eclipse.text.edits.MultiTextEdit;
 import org.eclipse.text.edits.ReplaceEdit;
 import org.eclipse.text.edits.TextEdit;
-
-import com.google.common.base.CharMatcher;
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Range;
-import com.google.common.collect.RangeSet;
-import com.google.common.collect.TreeRangeSet;
 
 /** Runs the Palantir Java formatter on the given code. */
 public class PalantirJavaFormatter extends CodeFormatter {
